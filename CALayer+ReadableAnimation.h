@@ -1,9 +1,8 @@
 //
 //  CALayer+ReadableAnimation.h
-//  AnimCategory
 //
 //  Created by Masahiro Katsumata on 2013/09/02.
-//  Copyright (c) 2013年 +Beans. All rights reserved.
+//  Copyright (c) 2013 +Beans. All rights reserved.
 //
 
 #import <QuartzCore/QuartzCore.h>

@@ -1,9 +1,8 @@
 //
 //  CATransaction+ReadableAnimation.m
-//  DrawAnim
 //
 //  Created by Masahiro Katsumata on 2013/09/03.
-//  Copyright (c) 2013年 Masahiro Katsumata. All rights reserved.
+//  Copyright (c) 2013 Masahiro Katsumata. All rights reserved.
 //
 
 #import "CATransaction+ReadableAnimation.h"
