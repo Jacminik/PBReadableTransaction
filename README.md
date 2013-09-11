@@ -42,7 +42,7 @@ PBReadableTransaction code:
 
     // CALayer
     layer.fade = 0.45f;     // layer.opacity
-    layer.rotate = 45.0f    // layer.transform = CGAffineTransformMakeRotation(...)
+    layer.rotate = 45.0f;   // layer.transform = CGAffineTransformMakeRotation(...)
     layer.scale = 1.3f      // layer.transform = CGAffineTransformMakeScale(...)
     layer.move = (UIOffset){10.0f, 10.0f};  // layer.transform = CGAffineTransformMakeTranslate(...)
 
