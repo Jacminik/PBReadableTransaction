@@ -38,6 +38,10 @@ PBReadableTransaction code:
 
 # Usage
 
+### Add your cord
+
+    #import "PBReadableTransaction.h"
+    
 ### Animatable Propertys
 
     // CALayer
