@@ -118,6 +118,12 @@ PBReadableTransaction code:
     }
 
 
+### Disabled Actions (Added: Jan 1, 2013)
+
+    // layer.position = ..., layer.transform = ... Non animatable.
+    layer.disabledActionKey = CAActionPosition | CAActionTransform;
+
+
 # License
 
 This code is distributed under the terms and conditions of the MIT license.
