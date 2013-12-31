@@ -8,6 +8,19 @@
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 
+typedef NS_OPTIONS(NSUInteger, CAActionKey) {
+    CAActionNon             = 0,
+    CAActionOnOrderIn       = 1 << 0,
+    CAActionOnOrderOut      = 1 << 1,
+    CAActionSublayers       = 1 << 2,
+    CAActionContents        = 1 << 3,
+    CAActionPosition        = 1 << 4,
+    CAActionBounds          = 1 << 5,
+    CAActionTransform       = 1 << 6,
+    CAActionStrokeStart     = 1 << 7,   // use CAShapeLayer.
+    CAActionStrokeEnd       = 1 << 8,   // use CAShapeLayer.
+    CAActionAll             = CAActionOnOrderIn | CAActionOnOrderOut | CAActionSublayers | CAActionContents | CAActionPosition | CAActionBounds | CAActionTransform | CAActionStrokeStart | CAActionStrokeEnd
+};
 
 @interface CALayer (ReadableAnimation)
 
@@ -22,6 +35,8 @@
 @property (strong, nonatomic) NSDictionary *basicAnims;
 
 - (void)resetBasicAnims;
+
+@property (nonatomic, assign) CAActionKey disabledActionKey;    // Set non animate action keys.
 
 @end
 

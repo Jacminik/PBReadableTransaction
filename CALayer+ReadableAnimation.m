@@ -108,6 +108,51 @@ CGFloat radians(CGFloat degrees) {
     self.affineTransform = CGAffineTransformIdentity;
 }
 
+- (CAActionKey)disabledActionKey {
+    return [objc_getAssociatedObject(self, @selector(disabledActionKey)) integerValue];
+}
+
+- (void)setDisabledActionKey:(CAActionKey)disabledActionKey
+{
+    objc_setAssociatedObject(self, @selector(disabledActionKey), @(disabledActionKey), OBJC_ASSOCIATION_ASSIGN);
+    
+    if (disabledActionKey & CAActionNon) {
+        self.actions = nil;
+        return;
+    }
+    
+    NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+    
+    if (disabledActionKey & CAActionOnOrderIn) {
+        temp[@"onOrderIn"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionOnOrderOut) {
+        temp[@"onOrderOut"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionSublayers) {
+        temp[@"sublayers"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionContents) {
+        temp[@"contents"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionPosition) {
+        temp[@"position"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionBounds) {
+        temp[@"bounds"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionTransform) {
+        temp[@"transform"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionStrokeStart) {
+        temp[@"strokeStart"] = [NSNull null];
+    }
+    if (disabledActionKey & CAActionStrokeEnd) {
+        temp[@"strokeEnd"] = [NSNull null];
+    }
+    self.actions = temp;
+}
+
 @end
 
 
